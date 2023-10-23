@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnyygq6ik50ob"
-path="res://.godot/imported/player-idle-3.png-439c5f9ab337843e0c679b792b841ab7.ctex"
+path="res://.godot/imported/player-idle-3.png-fa0a5826163532cfb93b3fa08515a1f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/idle/player-idle-3.png"
-dest_files=["res://.godot/imported/player-idle-3.png-439c5f9ab337843e0c679b792b841ab7.ctex"]
+source_file="res://Coin-Dash/assets/player/idle/player-idle-3.png"
+dest_files=["res://.godot/imported/player-idle-3.png-fa0a5826163532cfb93b3fa08515a1f8.ctex"]
 
 [params]
 

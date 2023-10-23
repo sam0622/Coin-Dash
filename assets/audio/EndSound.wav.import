@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://6xy0fgdad7"
-path="res://.godot/imported/EndSound.wav-cf2dae87ebfa0c96e653ae7f16d3411f.sample"
+path="res://.godot/imported/EndSound.wav-81be3953dc3b9248607c19755130c0ae.sample"
 
 [deps]
 
-source_file="res://assets/audio/EndSound.wav"
-dest_files=["res://.godot/imported/EndSound.wav-cf2dae87ebfa0c96e653ae7f16d3411f.sample"]
+source_file="res://Coin-Dash/assets/audio/EndSound.wav"
+dest_files=["res://.godot/imported/EndSound.wav-81be3953dc3b9248607c19755130c0ae.sample"]
 
 [params]
 

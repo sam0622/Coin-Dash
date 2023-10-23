@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btw133a5128tx"
-path="res://.godot/imported/player-run-2.png-63a769098db2c7a7bcf1b46e6cd03038.ctex"
+path="res://.godot/imported/player-run-2.png-541c19985b75747d45ce30a756f13389.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/run/player-run-2.png"
-dest_files=["res://.godot/imported/player-run-2.png-63a769098db2c7a7bcf1b46e6cd03038.ctex"]
+source_file="res://Coin-Dash/assets/player/run/player-run-2.png"
+dest_files=["res://.godot/imported/player-run-2.png-541c19985b75747d45ce30a756f13389.ctex"]
 
 [params]
 

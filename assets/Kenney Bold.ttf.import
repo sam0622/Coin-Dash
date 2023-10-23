@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://doajn73ujojax"
-path="res://.godot/imported/Kenney Bold.ttf-2fca0c1548cff89e5d9e8e7b3271a230.fontdata"
+path="res://.godot/imported/Kenney Bold.ttf-c1ff066472fb30dea8d295e827d7a455.fontdata"
 
 [deps]
 
-source_file="res://assets/Kenney Bold.ttf"
-dest_files=["res://.godot/imported/Kenney Bold.ttf-2fca0c1548cff89e5d9e8e7b3271a230.fontdata"]
+source_file="res://Coin-Dash/assets/Kenney Bold.ttf"
+dest_files=["res://.godot/imported/Kenney Bold.ttf-c1ff066472fb30dea8d295e827d7a455.fontdata"]
 
 [params]
 

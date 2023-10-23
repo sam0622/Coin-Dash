@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bf2hddy76unkd"
-path="res://.godot/imported/pow-frame-1.png-a953ec1531cfa284e324f17375f9827c.ctex"
+path="res://.godot/imported/pow-frame-1.png-a00e1874e6a631a0d38d624104d11581.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pow/pow-frame-1.png"
-dest_files=["res://.godot/imported/pow-frame-1.png-a953ec1531cfa284e324f17375f9827c.ctex"]
+source_file="res://Coin-Dash/assets/pow/pow-frame-1.png"
+dest_files=["res://.godot/imported/pow-frame-1.png-a00e1874e6a631a0d38d624104d11581.ctex"]
 
 [params]
 
