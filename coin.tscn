@@ -50,7 +50,7 @@ animations = [{
 "texture": ExtResource("12_nw745")
 }],
 "loop": true,
-"name": &"default",
+"name": &"coin",
 "speed": 12.0
 }]
 
@@ -64,7 +64,9 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ciqew")
-frame_progress = 0.140609
+animation = &"coin"
+autoplay = "coin"
+frame_progress = 0.483337
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ckyra")

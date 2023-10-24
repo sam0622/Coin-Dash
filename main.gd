@@ -9,12 +9,12 @@ var time_left = 0
 var screensize = Vector2.ZERO
 var playing = false
 
-func _ready():
+func _ready(): # Gets the screen size and hides player untill game start
 	screensize = get_viewport().get_visible_rect().size
 	$Player.screensize = screensize
 	$Player.hide()
 	
-func new_game():
+func new_game(): # Changes some variables, starts the timer, initializes control, and spawns coins.
 	playing = true
 	level = 1
 	score = 0
@@ -23,8 +23,11 @@ func new_game():
 	$Player.show()
 	$GameTimer.start()
 	spawn_coins()
+	$HUD.update_score(score)
+	$HUD.update_timer(time_left)
 	
-func spawn_coins():
+	
+func spawn_coins(): # Logic for coin spawning. Higher level, more coins
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
@@ -33,8 +36,33 @@ func spawn_coins():
 			randi_range(0, screensize.y))
 			
 			
-func _process(delta):
+func _process(delta): # If you get all the coins go to next level and add time
 	if playing and get_tree().get_nodes_in_group("coins").size() == 0:
 		level += 1
 		time_left += 5
 		spawn_coins()
+
+func _on_game_timer_timeout(): # Game over if out of time
+	time_left -= 1
+	$HUD.update_timer(time_left)
+	if time_left <= 0:
+		game_over()
+
+func _on_player_hurt(): # End game if hit
+	game_over()
+
+
+func _on_player_pickup(): # Add to score when you grab a coin
+	score += 1
+	$HUD.update_score(score)
+	
+func game_over(): # Stop the game when you die
+	playing = false
+	$GameTimer.stop()
+	get_tree().call_group("coins", "queue_free")
+	$HUD.show_game_over()
+	$Player.die()
+
+
+func _on_hud_start_game(): # Starts the game when you press start
+	new_game()
