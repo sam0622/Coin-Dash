@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8wifmrfqdfa1"]
+[gd_scene load_steps=4 format=3 uid="uid://bdd3tcxy0h37o"]
 
-[ext_resource type="Script" path="res://HUD.gd" id="1_5cfhi"]
+[ext_resource type="Script" path="res://Coin-Dash/hud.gd" id="1_jgibb"]
 [ext_resource type="FontFile" uid="uid://doajn73ujojax" path="res://Coin-Dash/assets/Kenney Bold.ttf" id="2_1pj73"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tdv55"]
@@ -11,7 +11,7 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 2)
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_5cfhi")
+script = ExtResource("1_jgibb")
 
 [node name="Message" type="Label" parent="."]
 anchors_preset = 14

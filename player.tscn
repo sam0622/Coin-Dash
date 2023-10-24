@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://o0unwuveogd4"]
+[gd_scene load_steps=16 format=3 uid="uid://dk0o3prikd7wc"]
 
 [ext_resource type="Script" path="res://Coin-Dash/player.gd" id="1_fe5bg"]
 [ext_resource type="Texture2D" uid="uid://mbmloscxvor3" path="res://Coin-Dash/assets/player/hurt/player-hurt-1.png" id="2_aminn"]
