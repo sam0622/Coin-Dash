@@ -2,6 +2,7 @@ extends Node
 
 @export var coin_scene : PackedScene
 @export var powerup_scene : PackedScene
+@export var powerup_weight = 5
 @export var playtime = 30
 
 var level = 1
@@ -64,7 +65,7 @@ func _on_player_pickup(type): # Manages pickups
 			$HUD.update_score(score)
 		"powerup":
 			$PowerupSound.play()
-			time_left += 10
+			time_left += powerup_weight
 			$HUD.update_timer(time_left)
 			
 func game_over(): # Stop the game when you die

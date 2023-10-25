@@ -15,6 +15,7 @@
 script = ExtResource("1_fwrhy")
 coin_scene = ExtResource("2_r4aay")
 powerup_scene = ExtResource("3_eivsi")
+powerup_weight = 10
 
 [node name="GameTimer" type="Timer" parent="."]
 
