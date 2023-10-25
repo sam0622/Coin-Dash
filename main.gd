@@ -28,6 +28,7 @@ func new_game(): # Changes some variables, starts the timer, initializes control
 	
 	
 func spawn_coins(): # Logic for coin spawning. Higher level, more coins
+	$LevelSound.play()
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
@@ -55,6 +56,7 @@ func _on_player_hurt(): # End game if hit
 func _on_player_pickup(): # Add to score when you grab a coin
 	score += 1
 	$HUD.update_score(score)
+	$CoinSound.play()
 	
 func game_over(): # Stop the game when you die
 	playing = false
@@ -62,7 +64,7 @@ func game_over(): # Stop the game when you die
 	get_tree().call_group("coins", "queue_free")
 	$HUD.show_game_over()
 	$Player.die()
-
+	$Endsound.play()
 
 func _on_hud_start_game(): # Starts the game when you press start
 	new_game()
