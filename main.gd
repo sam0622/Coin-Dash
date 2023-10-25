@@ -68,3 +68,5 @@ func game_over(): # Stop the game when you die
 
 func _on_hud_start_game(): # Starts the game when you press start
 	new_game()
+
+

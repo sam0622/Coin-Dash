@@ -10,6 +10,3 @@ func pickup(): # Delete the coin when it gets yoinked
 	await tw.finished
 	queue_free()
 	
-	
-
-

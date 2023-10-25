@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm1yxvu585kif"]
+[gd_scene load_steps=10 format=3 uid="uid://dm1yxvu585kif"]
 
 [ext_resource type="Script" path="res://Coin-Dash/main.gd" id="1_fwrhy"]
 [ext_resource type="PackedScene" uid="uid://cbhse68rhoj7s" path="res://Coin-Dash/coin.tscn" id="2_r4aay"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bdd3tcxy0h37o" path="res://Coin-Dash/hud.tscn" id="5_vvfr2"]
 [ext_resource type="AudioStream" uid="uid://6202hpir3gon" path="res://Coin-Dash/assets/audio/Coin.wav" id="6_jmh15"]
 [ext_resource type="AudioStream" uid="uid://cgc0qhwtipc58" path="res://Coin-Dash/assets/audio/Level.wav" id="7_dcju6"]
+[ext_resource type="AudioStream" uid="uid://dxksnoonj78iv" path="res://Coin-Dash/assets/audio/Powerup.wav" id="7_s4vr5"]
 [ext_resource type="AudioStream" uid="uid://6xy0fgdad7" path="res://Coin-Dash/assets/audio/EndSound.wav" id="8_efetg"]
 
 [node name="Main" type="Node"]
@@ -28,6 +29,9 @@ stretch_mode = 1
 
 [node name="HUD" parent="." instance=ExtResource("5_vvfr2")]
 
+[node name="PowerupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_s4vr5")
+
 [node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_jmh15")
 
@@ -37,7 +41,11 @@ stream = ExtResource("7_dcju6")
 [node name="Endsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_efetg")
 
+[node name="PowerupTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="pickup" from="Player" to="." method="_on_player_pickup"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="PowerupTimer" to="." method="_on_powerup_timer_timeout"]

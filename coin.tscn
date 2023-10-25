@@ -1,15 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbhse68rhoj7s"]
+[gd_scene load_steps=25 format=3 uid="uid://cbhse68rhoj7s"]
 
 [ext_resource type="Script" path="res://Coin-Dash/coin.gd" id="1_7x26y"]
+[ext_resource type="Texture2D" uid="uid://bf2hddy76unkd" path="res://Coin-Dash/assets/pow/pow-frame-1.png" id="2_avfs1"]
 [ext_resource type="Texture2D" uid="uid://dcakyafw5u4jo" path="res://Coin-Dash/assets/coin/coin-frame-1.png" id="2_br8xw"]
+[ext_resource type="Texture2D" uid="uid://ckyvvxw1ojrxa" path="res://Coin-Dash/assets/pow/pow-frame-2.png" id="3_1m0mn"]
 [ext_resource type="Texture2D" uid="uid://dapxprgs5e36o" path="res://Coin-Dash/assets/coin/coin-frame-2.png" id="3_c4uw0"]
+[ext_resource type="Texture2D" uid="uid://33x3gurfvfhx" path="res://Coin-Dash/assets/pow/pow-frame-3.png" id="4_3eavu"]
 [ext_resource type="Texture2D" uid="uid://bdpgav61rlgr5" path="res://Coin-Dash/assets/coin/coin-frame-3.png" id="4_aipr0"]
+[ext_resource type="Texture2D" uid="uid://bdnlk1lu38hpm" path="res://Coin-Dash/assets/pow/pow-frame-4.png" id="5_chkok"]
 [ext_resource type="Texture2D" uid="uid://dwgy3nsxx2h0r" path="res://Coin-Dash/assets/coin/coin-frame-4.png" id="5_mnfkd"]
+[ext_resource type="Texture2D" uid="uid://dkep7jetic3ck" path="res://Coin-Dash/assets/pow/pow-frame-5.png" id="6_hqtyj"]
 [ext_resource type="Texture2D" uid="uid://shhjgfj7um4y" path="res://Coin-Dash/assets/coin/coin-frame-5.png" id="6_uopt1"]
+[ext_resource type="Texture2D" uid="uid://cw7otcbjhwh5g" path="res://Coin-Dash/assets/pow/pow-frame-6.png" id="7_aikx4"]
 [ext_resource type="Texture2D" uid="uid://bhwyoghs0n5f2" path="res://Coin-Dash/assets/coin/coin-frame-6.png" id="7_qoisp"]
 [ext_resource type="Texture2D" uid="uid://dpfwc1u6ghsc1" path="res://Coin-Dash/assets/coin/coin-frame-7.png" id="8_a2ki0"]
+[ext_resource type="Texture2D" uid="uid://b8jtofjajl637" path="res://Coin-Dash/assets/pow/pow-frame-7.png" id="8_r0dxm"]
+[ext_resource type="Texture2D" uid="uid://cucrrnixej35l" path="res://Coin-Dash/assets/pow/pow-frame-8.png" id="9_84jb0"]
 [ext_resource type="Texture2D" uid="uid://6687tqp3jaie" path="res://Coin-Dash/assets/coin/coin-frame-8.png" id="9_uughs"]
 [ext_resource type="Texture2D" uid="uid://c1gu6jwrdu2h5" path="res://Coin-Dash/assets/coin/coin-frame-9.png" id="10_67apc"]
+[ext_resource type="Texture2D" uid="uid://b54q4rls1lkl4" path="res://Coin-Dash/assets/pow/pow-frame-9.png" id="10_ud8y3"]
+[ext_resource type="Texture2D" uid="uid://dxjo5whk8fjce" path="res://Coin-Dash/assets/pow/pow-frame-10.png" id="11_1b2pn"]
 [ext_resource type="Texture2D" uid="uid://d0d7xkby1oqy5" path="res://Coin-Dash/assets/coin/coin-frame-10.png" id="11_6iq4m"]
 [ext_resource type="Texture2D" uid="uid://dhk0ltik5mqkd" path="res://Coin-Dash/assets/coin/coin-frame-11.png" id="12_nw745"]
 
@@ -49,8 +59,43 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_nw745")
 }],
-"loop": false,
-"name": &"default",
+"loop": true,
+"name": &"coin",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_avfs1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1m0mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3eavu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_chkok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hqtyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aikx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r0dxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_84jb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ud8y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1b2pn")
+}],
+"loop": true,
+"name": &"powerup",
 "speed": 12.0
 }]
 
@@ -64,10 +109,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ciqew")
+animation = &"coin"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ckyra")
-
-[node name="Timer" type="Timer" parent="."]
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
