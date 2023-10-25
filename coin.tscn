@@ -66,7 +66,7 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ciqew")
 animation = &"coin"
 autoplay = "coin"
-frame_progress = 0.483337
+frame_progress = 0.817629
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ckyra")

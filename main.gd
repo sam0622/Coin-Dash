@@ -36,7 +36,7 @@ func spawn_coins(): # Logic for coin spawning. Higher level, more coins
 			randi_range(0, screensize.y))
 			
 			
-func _process(delta): # If you get all the coins go to next level and add time
+func _process(_delta): # If you get all the coins go to next level and add time
 	if playing and get_tree().get_nodes_in_group("coins").size() == 0:
 		level += 1
 		time_left += 5
