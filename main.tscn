@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm1yxvu585kif"]
+[gd_scene load_steps=11 format=3 uid="uid://dm1yxvu585kif"]
 
 [ext_resource type="Script" path="res://Coin-Dash/main.gd" id="1_fwrhy"]
 [ext_resource type="PackedScene" uid="uid://cbhse68rhoj7s" path="res://Coin-Dash/coin.tscn" id="2_r4aay"]
+[ext_resource type="PackedScene" uid="uid://c4w4fd4mhdf6u" path="res://Coin-Dash/powerup.tscn" id="3_eivsi"]
 [ext_resource type="Texture2D" uid="uid://dm38ph3bbf86x" path="res://Coin-Dash/assets/grass.png" id="3_rvvn3"]
 [ext_resource type="PackedScene" uid="uid://dk0o3prikd7wc" path="res://Coin-Dash/player.tscn" id="4_b57ub"]
 [ext_resource type="PackedScene" uid="uid://bdd3tcxy0h37o" path="res://Coin-Dash/hud.tscn" id="5_vvfr2"]
@@ -13,6 +14,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_fwrhy")
 coin_scene = ExtResource("2_r4aay")
+powerup_scene = ExtResource("3_eivsi")
 
 [node name="GameTimer" type="Timer" parent="."]
 

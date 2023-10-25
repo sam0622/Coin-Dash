@@ -10,3 +10,7 @@ func pickup(): # Delete the coin when it gets yoinked
 	await tw.finished
 	queue_free()
 	
+
+
+func _on_lifetime_timeout():
+	queue_free()
