@@ -2,6 +2,7 @@ extends Node
 
 @export var coin_scene : PackedScene
 @export var powerup_scene : PackedScene
+@export var obstacle_scene : PackedScene
 @export var powerup_weight = 5
 @export var playtime = 30
 
@@ -18,7 +19,7 @@ func _ready(): # Gets the screen size and hides player untill game start
 	
 func new_game(): # Changes some variables, starts the timer, initializes control, and spawns coins.
 	playing = true
-	level = 1
+	level = 4
 	score = 0
 	time_left = playtime
 	$Player.start()
@@ -31,6 +32,7 @@ func new_game(): # Changes some variables, starts the timer, initializes control
 	
 func spawn_coins(): # Logic for coin spawning. Higher level, more coins
 	$LevelSound.play()
+	print(level)
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
@@ -38,12 +40,25 @@ func spawn_coins(): # Logic for coin spawning. Higher level, more coins
 		c.position = Vector2(randi_range(0, screensize.x),
 			randi_range(0, screensize.y))
 			
+func spawn_obstacles(): # Logic for cactus spawning.
+	var max_obstacles = 2
+	
+	var num_obstacles_to_spawn = min(level -4, max_obstacles)
+	
+	for i in range(num_obstacles_to_spawn):
+		var o = obstacle_scene.instantiate()
+		add_child(o)
+		o.screensize = screensize
+		o.position = Vector2(randi_range(0, screensize.x),
+			randi_range(0, screensize.y))
 			
 func _process(_delta): # If you get all the coins go to next level and add time
 	if playing and get_tree().get_nodes_in_group("coins").size() == 0:
 		level += 1
 		time_left += 5
+		get_tree().call_group("obstacles", "queue_free")
 		spawn_coins()
+		spawn_obstacles()
 		$PowerupTimer.wait_time = randf_range(5, 8)
 		$PowerupTimer.start()
 
@@ -72,6 +87,7 @@ func game_over(): # Stop the game when you die
 	playing = false
 	$GameTimer.stop()
 	get_tree().call_group("coins", "queue_free")
+	get_tree().call_group("obstacles", "queue_free")
 	$HUD.show_game_over()
 	$Player.die()
 	$Endsound.play()

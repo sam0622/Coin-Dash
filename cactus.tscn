@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds115kvu56uwd"]
+
+[ext_resource type="Script" path="res://Coin-Dash/cactus.gd" id="1_bskst"]
+[ext_resource type="Texture2D" uid="uid://xo8erce11m0o" path="res://Coin-Dash/assets/cactus.png" id="1_lrbbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65hyl"]
+size = Vector2(44, 60)
+
+[node name="Cactus" type="Area2D" groups=["obstacles"]]
+position = Vector2(3, -1)
+script = ExtResource("1_bskst")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lrbbt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_65hyl")

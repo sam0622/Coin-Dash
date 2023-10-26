@@ -21,3 +21,9 @@ func pickup(): # Delete the coin when it gets yoinked
 func _on_timer_timeout():
 	$AnimatedSprite2D.frame = 0
 	$AnimatedSprite2D.play()
+
+
+func _on_area_entered(area):
+	if area.is_in_group("obstacles"):
+		position = Vector2(randi_range(0, screensize.x),
+			randi_range(0, screensize.y))

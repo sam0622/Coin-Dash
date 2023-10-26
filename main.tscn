@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm1yxvu585kif"]
+[gd_scene load_steps=12 format=3 uid="uid://dm1yxvu585kif"]
 
 [ext_resource type="Script" path="res://Coin-Dash/main.gd" id="1_fwrhy"]
 [ext_resource type="PackedScene" uid="uid://cbhse68rhoj7s" path="res://Coin-Dash/coin.tscn" id="2_r4aay"]
@@ -10,11 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://cgc0qhwtipc58" path="res://Coin-Dash/assets/audio/Level.wav" id="7_dcju6"]
 [ext_resource type="AudioStream" uid="uid://dxksnoonj78iv" path="res://Coin-Dash/assets/audio/Powerup.wav" id="7_s4vr5"]
 [ext_resource type="AudioStream" uid="uid://6xy0fgdad7" path="res://Coin-Dash/assets/audio/EndSound.wav" id="8_efetg"]
+[ext_resource type="PackedScene" uid="uid://ds115kvu56uwd" path="res://Coin-Dash/cactus.tscn" id="11_spa8j"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_fwrhy")
 coin_scene = ExtResource("2_r4aay")
 powerup_scene = ExtResource("3_eivsi")
+obstacle_scene = ExtResource("11_spa8j")
 powerup_weight = 10
 
 [node name="GameTimer" type="Timer" parent="."]
