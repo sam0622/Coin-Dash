@@ -19,7 +19,7 @@ func _ready(): # Gets the screen size and hides player untill game start
 	
 func new_game(): # Changes some variables, starts the timer, initializes control, and spawns coins.
 	playing = true
-	level = 4
+	level = 1
 	score = 0
 	time_left = playtime
 	$Player.start()
