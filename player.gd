@@ -46,4 +46,3 @@ func _on_area_entered(area):
 		hurt.emit()
 		die()
 
-
