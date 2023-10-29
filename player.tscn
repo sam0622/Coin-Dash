@@ -69,7 +69,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_618ds"]
-size = Vector2(28, 42)
+size = Vector2(24, 34)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_fe5bg")
@@ -83,6 +83,7 @@ autoplay = "idle"
 offset = Vector2(2.08165e-12, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_618ds")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
