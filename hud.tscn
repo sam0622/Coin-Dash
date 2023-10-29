@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdd3tcxy0h37o"]
+[gd_scene load_steps=5 format=3 uid="uid://bdd3tcxy0h37o"]
 
 [ext_resource type="Script" path="res://Coin-Dash/hud.gd" id="1_jgibb"]
 [ext_resource type="FontFile" uid="uid://doajn73ujojax" path="res://Coin-Dash/assets/Kenney Bold.ttf" id="2_1pj73"]
@@ -9,6 +9,10 @@ font_size = 48
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0phso"]
+font = ExtResource("2_1pj73")
+font_size = 27
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_jgibb")
@@ -68,6 +72,23 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_1pj73")
 theme_override_font_sizes/font_size = 48
 text = "Start"
+
+[node name="HighScore" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -220.0
+offset_right = 21.0
+offset_bottom = -194.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_0phso")
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

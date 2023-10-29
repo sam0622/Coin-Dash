@@ -8,6 +8,7 @@ extends Node
 
 var level = 1
 var score = 0
+var high_score = 0
 var time_left = 0
 var screensize = Vector2.ZERO
 var playing = false
@@ -16,6 +17,8 @@ func _ready(): # Gets the screen size and hides player untill game start
 	screensize = get_viewport().get_visible_rect().size
 	$Player.screensize = screensize
 	$Player.hide()
+	$HUD.update_high_score(high_score)
+	$HUD.show_high_score()
 	
 func new_game(): # Changes some variables, starts the timer, initializes control, and spawns coins.
 	playing = true
@@ -86,6 +89,8 @@ func _on_player_pickup(type): # Manages pickups
 func game_over(): # Stop the game when you die
 	playing = false
 	$GameTimer.stop()
+	check_score(score)
+	$HUD.update_high_score(high_score)
 	get_tree().call_group("coins", "queue_free")
 	get_tree().call_group("obstacles", "queue_free")
 	$HUD.show_game_over()
@@ -100,3 +105,10 @@ func _on_powerup_timer_timeout():
 	add_child(p)
 	p.screensize = screensize
 	p.position = Vector2(randi_range(0, screensize.x), randi_range(0, screensize.y))
+	
+	
+func check_score(value):
+	if score > high_score:
+		high_score = score
+		
+
