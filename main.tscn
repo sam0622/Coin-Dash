@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ds115kvu56uwd" path="res://Coin-Dash/cactus.tscn" id="11_spa8j"]
 
 [node name="Main" type="Node"]
+process_mode = 3
 script = ExtResource("1_fwrhy")
 coin_scene = ExtResource("2_r4aay")
 powerup_scene = ExtResource("3_eivsi")
@@ -20,8 +21,10 @@ obstacle_scene = ExtResource("11_spa8j")
 powerup_weight = 10
 
 [node name="GameTimer" type="Timer" parent="."]
+process_mode = 1
 
 [node name="Background" type="TextureRect" parent="."]
+process_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,22 +34,29 @@ texture = ExtResource("3_rvvn3")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("4_b57ub")]
+process_mode = 1
 
 [node name="HUD" parent="." instance=ExtResource("5_vvfr2")]
+process_mode = 1
 
 [node name="PowerupSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 1
 stream = ExtResource("7_s4vr5")
 
 [node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 1
 stream = ExtResource("6_jmh15")
 
 [node name="LevelSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 1
 stream = ExtResource("7_dcju6")
 
 [node name="Endsound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 1
 stream = ExtResource("8_efetg")
 
 [node name="PowerupTimer" type="Timer" parent="."]
+process_mode = 1
 one_shot = true
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
